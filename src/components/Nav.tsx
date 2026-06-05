@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/inishowen-trails-logo.jpg.asset.json";
+
 
 const links = [
   { to: "/trails", label: "Trails" },
