@@ -1,45 +1,39 @@
-import { Link, useRouterState } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { Link } from "@tanstack/react-router";
+import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const links = [
-  { to: "/trails", label: "Trails", hash: undefined },
-  { to: "/", label: "Events", hash: "events" },
-  { to: "/inishowen", label: "Inishowen", hash: undefined },
-  { to: "/about", label: "About", hash: undefined },
-  { to: "/support", label: "Support Us", hash: undefined },
-] as { to: string; label: string; hash?: string }[];
+  { to: "/trails", label: "Trails" },
+  { to: "/events", label: "Events" },
+  { to: "/inishowen", label: "Inishowen" },
+  { to: "/about", label: "About" },
+  { to: "/support", label: "Support Us" },
+] as { to: string; label: string }[];
 
 export function Nav() {
-  const pathname = useRouterState({ select: (s) => s.location.pathname });
-  const isHome = pathname === "/";
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
-  useEffect(() => {
-    if (!isHome) return;
-    const onScroll = () => setScrolled(window.scrollY > 80);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [isHome]);
-
-  const solid = !isHome || scrolled || open;
-
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
-        solid ? "bg-brand-purple" : "bg-transparent"
-      }`}
-    >
+    <header className="fixed top-0 left-0 right-0 z-50 bg-brand-purple">
       <div className="mx-auto max-w-7xl px-5 py-4 flex items-center justify-between">
-        <Link to="/" className="flex items-baseline gap-1 leading-none">
-          <span className="text-white font-bold uppercase tracking-tight text-xl">
+        <Link to="/" className="leading-[1] font-bold text-white lowercase">
+          <span
+            className="block text-xs tracking-[0.2em]"
+            style={{ fontFamily: "Ubuntu, sans-serif", fontWeight: 700 }}
+          >
             inish
           </span>
-          <span className="inline-block size-2 rounded-full bg-brand-amber" />
-          <span className="text-white font-bold uppercase tracking-tight text-xl">
-            owen trails
+          <span
+            className="block text-xs tracking-[0.2em]"
+            style={{ fontFamily: "Ubuntu, sans-serif", fontWeight: 700 }}
+          >
+            owen
+          </span>
+          <span
+            className="block text-xs tracking-[0.2em]"
+            style={{ fontFamily: "Ubuntu, sans-serif", fontWeight: 700 }}
+          >
+            trails
           </span>
         </Link>
 
@@ -48,7 +42,6 @@ export function Nav() {
             <Link
               key={l.label}
               to={l.to}
-              hash={l.hash}
               className="text-white text-sm font-normal hover:text-brand-amber transition-colors"
             >
               {l.label}
@@ -72,7 +65,6 @@ export function Nav() {
               <Link
                 key={l.label}
                 to={l.to}
-                hash={l.hash}
                 onClick={() => setOpen(false)}
                 className="text-white text-base font-normal py-2"
               >
