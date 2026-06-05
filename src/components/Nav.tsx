@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/inishowen-trails-logo.jpg.asset.json";
 
 const links = [
   { to: "/trails", label: "Trails" },
@@ -16,14 +17,12 @@ export function Nav() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-brand-purple">
       <div className="mx-auto max-w-7xl px-5 py-4 flex items-center justify-between">
-        <Link
-          to="/"
-          className="text-white lowercase"
-          style={{ fontFamily: "Ubuntu, sans-serif", fontWeight: 700 }}
-        >
-          <span className="block text-sm leading-[1.05] tracking-tight">inish</span>
-          <span className="block text-sm leading-[1.05] tracking-tight">owen</span>
-          <span className="block text-sm leading-[1.05] tracking-tight">trails</span>
+        <Link to="/" className="block">
+          <img
+            src={logo.url}
+            alt="inishowen trails"
+            style={{ height: 52, width: "auto" }}
+          />
         </Link>
 
         <nav className="hidden md:flex items-center gap-7">
