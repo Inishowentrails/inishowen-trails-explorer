@@ -35,7 +35,7 @@ export function Footer() {
           <h4 className="font-bold uppercase tracking-tight text-sm mb-4">Quick links</h4>
           <ul className="space-y-2 text-sm text-white/85">
             <li><Link to="/trails" className="hover:text-brand-amber">Trails</Link></li>
-            <li><Link to="/#events" className="hover:text-brand-amber">Events</Link></li>
+            <li><Link to="/" hash="events" className="hover:text-brand-amber">Events</Link></li>
             <li><Link to="/inishowen" className="hover:text-brand-amber">Inishowen</Link></li>
             <li><Link to="/about" className="hover:text-brand-amber">About</Link></li>
             <li><Link to="/support" className="hover:text-brand-amber">Support Us</Link></li>
