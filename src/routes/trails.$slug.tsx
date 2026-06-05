@@ -99,7 +99,7 @@ function TrailDetail() {
               Points of interest
             </h2>
             <ul className="space-y-2">
-              {trail.pointsOfInterest.map((p) => (
+              {trail.pointsOfInterest.map((p: string) => (
                 <li key={p} className="flex items-start gap-2 text-black/85">
                   <MapPin size={18} className="text-brand-amber mt-0.5 shrink-0" />
                   <span>{p}</span>
