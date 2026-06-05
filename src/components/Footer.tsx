@@ -1,16 +1,18 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Facebook } from "lucide-react";
+import logo from "@/assets/inishowen-trails-logo.jpg.asset.json";
 
 export function Footer() {
   return (
     <footer className="bg-brand-purple text-white">
       <div className="mx-auto max-w-7xl px-5 py-14 grid gap-10 md:grid-cols-3">
         <div>
-          <div className="flex items-baseline gap-1 leading-none mb-4">
-            <span className="font-bold uppercase tracking-tight text-2xl">inish</span>
-            <span className="inline-block size-2 rounded-full bg-brand-amber" />
-            <span className="font-bold uppercase tracking-tight text-2xl">owen trails</span>
-          </div>
+          <img
+            src={logo.url}
+            alt="inishowen trails"
+            className="mb-4"
+            style={{ height: 40, width: "auto" }}
+          />
           <p className="text-sm text-white/85">inishowentrails@gmail.com</p>
           <p className="text-sm text-white/85">inishowentrails.ie</p>
           <div className="flex gap-3 mt-5">
