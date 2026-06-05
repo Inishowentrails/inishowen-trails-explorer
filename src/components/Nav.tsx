@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import wordmark from "@/assets/inishowen-trails-wordmark.jpeg.asset.json";
+import wordmark from "@/assets/inishowen-trails-logo-stacked.jpeg.asset.json";
 
 
 
@@ -23,7 +23,7 @@ export function Nav() {
           <img
             src={wordmark.url}
             alt="inishowen trails"
-            style={{ height: 44, width: "auto" }}
+            style={{ height: 64, width: "auto" }}
           />
         </Link>
 
