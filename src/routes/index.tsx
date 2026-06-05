@@ -59,7 +59,8 @@ function Home() {
         <div className="absolute inset-0 bg-black/35" />
         <div className="relative z-10 text-center px-5 max-w-4xl">
           <h1 className="text-white font-bold uppercase tracking-tight text-4xl sm:text-6xl md:text-7xl leading-[0.95]">
-            Inishowen, Ireland's best kept secret
+            <span className="block">Inishowen,</span>
+            <span className="block">Ireland's best kept secret</span>
           </h1>
           <p className="mt-5 text-white font-light uppercase tracking-tight text-base sm:text-xl md:text-2xl">
             80km of walking &amp; cycling trails · Donegal, Ireland
