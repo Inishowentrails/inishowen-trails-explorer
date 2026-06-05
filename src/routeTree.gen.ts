@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TrailsRouteImport } from './routes/trails'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as TrailsSlugRouteImport } from './routes/trails.$slug'
 
 const TrailsRoute = TrailsRouteImport.update({
   id: '/trails',
@@ -22,31 +23,39 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TrailsSlugRoute = TrailsSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => TrailsRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/trails': typeof TrailsRoute
+  '/trails': typeof TrailsRouteWithChildren
+  '/trails/$slug': typeof TrailsSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/trails': typeof TrailsRoute
+  '/trails': typeof TrailsRouteWithChildren
+  '/trails/$slug': typeof TrailsSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/trails': typeof TrailsRoute
+  '/trails': typeof TrailsRouteWithChildren
+  '/trails/$slug': typeof TrailsSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/trails'
+  fullPaths: '/' | '/trails' | '/trails/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/trails'
-  id: '__root__' | '/' | '/trails'
+  to: '/' | '/trails' | '/trails/$slug'
+  id: '__root__' | '/' | '/trails' | '/trails/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  TrailsRoute: typeof TrailsRoute
+  TrailsRoute: typeof TrailsRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -65,12 +74,30 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/trails/$slug': {
+      id: '/trails/$slug'
+      path: '/$slug'
+      fullPath: '/trails/$slug'
+      preLoaderRoute: typeof TrailsSlugRouteImport
+      parentRoute: typeof TrailsRoute
+    }
   }
 }
 
+interface TrailsRouteChildren {
+  TrailsSlugRoute: typeof TrailsSlugRoute
+}
+
+const TrailsRouteChildren: TrailsRouteChildren = {
+  TrailsSlugRoute: TrailsSlugRoute,
+}
+
+const TrailsRouteWithChildren =
+  TrailsRoute._addFileChildren(TrailsRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  TrailsRoute: TrailsRoute,
+  TrailsRoute: TrailsRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
