@@ -16,25 +16,14 @@ export function Nav() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-brand-purple">
       <div className="mx-auto max-w-7xl px-5 py-4 flex items-center justify-between">
-        <Link to="/" className="leading-[1] font-bold text-white lowercase">
-          <span
-            className="block text-xs tracking-[0.2em]"
-            style={{ fontFamily: "Ubuntu, sans-serif", fontWeight: 700 }}
-          >
-            inish
-          </span>
-          <span
-            className="block text-xs tracking-[0.2em]"
-            style={{ fontFamily: "Ubuntu, sans-serif", fontWeight: 700 }}
-          >
-            owen
-          </span>
-          <span
-            className="block text-xs tracking-[0.2em]"
-            style={{ fontFamily: "Ubuntu, sans-serif", fontWeight: 700 }}
-          >
-            trails
-          </span>
+        <Link
+          to="/"
+          className="text-white lowercase"
+          style={{ fontFamily: "Ubuntu, sans-serif", fontWeight: 700 }}
+        >
+          <span className="block text-sm leading-[1.05] tracking-tight">inish</span>
+          <span className="block text-sm leading-[1.05] tracking-tight">owen</span>
+          <span className="block text-sm leading-[1.05] tracking-tight">trails</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-7">
