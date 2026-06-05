@@ -46,8 +46,9 @@ export function Nav() {
         <nav className="hidden md:flex items-center gap-7">
           {links.map((l) => (
             <Link
-              key={l.to}
+              key={l.label}
               to={l.to}
+              hash={l.hash}
               className="text-white text-sm font-normal hover:text-brand-amber transition-colors"
             >
               {l.label}
