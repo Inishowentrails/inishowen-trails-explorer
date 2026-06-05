@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Instagram } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 
 export const Route = createFileRoute("/events")({
@@ -98,9 +99,18 @@ function EventsPage() {
               Solo Mates × Inishowen Trails
             </h3>
             <p className="mt-3 text-black/85 leading-relaxed max-w-2xl">
-              A monthly meet-up combining a trail walk, a hands-on activity, and food together after.
-              Open to all — come on your own, leave with friends.
+              A monthly event series in collaboration with Solo Mates. Each month brings a different activity alongside the trail walk — this month: mini trampoline fitness session with weighted BEAT sticks, followed by a 5km Carndonagh Loop walk, then brunch at the Diamond Café, Carndonagh. No experience needed. Just show up.
             </p>
+            <a
+              href="https://www.instagram.com/solomates2022"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-4 inline-flex items-center gap-2 text-brand-purple hover:opacity-80"
+              style={{ fontWeight: 700, fontSize: 13 }}
+            >
+              <Instagram size={16} />
+              @solomates2022
+            </a>
           </div>
 
           <h3 className="mt-12 font-bold uppercase tracking-tight text-brand-purple text-xl">
@@ -128,7 +138,7 @@ function EventsPage() {
           <h2 className="font-bold uppercase tracking-tight text-brand-purple text-3xl md:text-4xl">
             More events
           </h2>
-          <div className="mt-10 grid md:grid-cols-3 gap-6">
+          <div className="mt-10 grid md:grid-cols-2 gap-6">
             {[
               {
                 title: "Inishowen Sponsored Walk",
@@ -160,6 +170,32 @@ function EventsPage() {
                 </a>
               </div>
             ))}
+            <div className="bg-brand-cloud rounded-xl p-7 flex flex-col">
+              <span
+                className="self-start bg-brand-purple text-white uppercase tracking-widest rounded-full px-3 py-1"
+                style={{ fontSize: 11, fontWeight: 700 }}
+              >
+                Annual event
+              </span>
+              <h3
+                className="mt-3 text-brand-purple"
+                style={{ fontWeight: 700, fontSize: 18 }}
+              >
+                Annual Sliabh Sneacht Charity Climb
+              </h3>
+              <p style={{ color: "#947474", fontSize: 13 }} className="mt-1">
+                7th August 2026 · in conjunction with Clonmany Festival
+              </p>
+              <p className="mt-3" style={{ color: "#000", fontSize: 13 }}>
+                Our annual charity climb of Sliabh Sneacht — the Roof of Inishowen — held each year as part of the Clonmany Festival. A community climb to the summit at 615 metres, with the holy well Tobar na Súl at the top. All fitness levels welcome. Details and registration to follow.
+              </p>
+              <a
+                href="mailto:inishowentrails@gmail.com"
+                className="mt-6 inline-flex items-center justify-center bg-white border-2 border-brand-purple text-brand-purple font-bold uppercase tracking-tight px-5 py-2.5 rounded-md hover:bg-brand-purple hover:text-white self-start"
+              >
+                Register interest
+              </a>
+            </div>
           </div>
         </div>
       </section>
