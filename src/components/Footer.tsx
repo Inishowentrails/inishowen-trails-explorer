@@ -1,6 +1,5 @@
-import { Link } from "@tanstack/react-router";
+import Link from "next/link";
 import { Instagram, Facebook } from "lucide-react";
-import logo from "@/assets/inishowen-trails-logo.jpg.asset.json";
 
 export function Footer() {
   return (
@@ -8,7 +7,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-5 py-14 grid gap-10 md:grid-cols-3">
         <div>
           <img
-            src={logo.url}
+            src="/logo.jpeg"
             alt="inishowen trails"
             className="mb-4"
             style={{ height: 40, width: "auto" }}
@@ -36,11 +35,11 @@ export function Footer() {
         <div>
           <h4 className="font-bold uppercase tracking-tight text-sm mb-4">Quick links</h4>
           <ul className="space-y-2 text-sm text-white/85">
-            <li><Link to="/trails" className="hover:text-brand-amber">Trails</Link></li>
-            <li><Link to="/" hash="events" className="hover:text-brand-amber">Events</Link></li>
-            <li><Link to="/inishowen" className="hover:text-brand-amber">Inishowen</Link></li>
-            <li><Link to="/about" className="hover:text-brand-amber">About</Link></li>
-            <li><Link to="/support" className="hover:text-brand-amber">Support Us</Link></li>
+            <li><Link href="/trails" className="hover:text-brand-amber">Trails</Link></li>
+            <li><Link href="/#events" className="hover:text-brand-amber">Events</Link></li>
+            <li><Link href="/inishowen" className="hover:text-brand-amber">Inishowen</Link></li>
+            <li><Link href="/about" className="hover:text-brand-amber">About</Link></li>
+            <li><Link href="/support" className="hover:text-brand-amber">Support Us</Link></li>
           </ul>
         </div>
 
