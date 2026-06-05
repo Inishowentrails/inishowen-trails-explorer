@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Instagram } from "lucide-react";
+import { Instagram, Facebook } from "lucide-react";
 import { trails } from "@/data/trails";
 import { TrailCard } from "@/components/TrailCard";
 
@@ -10,7 +10,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "80km of traffic-free walking and cycling trails across the Inishowen peninsula, County Donegal.",
+          "80km of walking and cycling trails across the Inishowen peninsula, County Donegal.",
       },
     ],
   }),
@@ -38,6 +38,8 @@ const instaImgs = [
   "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=600&q=80",
 ];
 
+const fbThumbs = instaImgs.slice(0, 3);
+
 function Home() {
   const featured = [
     trails.find((t) => t.slug === "old-carn-road-drovers-trail")!,
@@ -57,10 +59,10 @@ function Home() {
         <div className="absolute inset-0 bg-black/35" />
         <div className="relative z-10 text-center px-5 max-w-4xl">
           <h1 className="text-white font-bold uppercase tracking-tight text-4xl sm:text-6xl md:text-7xl leading-[0.95]">
-            Ireland's best-kept secret
+            Inishowen, Ireland's best kept secret
           </h1>
           <p className="mt-5 text-white font-light uppercase tracking-tight text-base sm:text-xl md:text-2xl">
-            80km of trails. Zero tarmac. Inishowen, Donegal.
+            80km of walking &amp; cycling trails · Donegal, Ireland
           </p>
           <div className="mt-9 flex flex-col sm:flex-row gap-3 justify-center">
             <Link
@@ -82,17 +84,22 @@ function Home() {
       {/* STATS */}
       <section className="bg-brand-purple text-white">
         <div className="mx-auto max-w-7xl px-5 py-14 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          {[
-            ["80km", "of trails"],
-            ["9", "trail clusters"],
-            ["100%", "traffic-free"],
-            ["All ages", "family friendly"],
-          ].map(([n, l]) => (
-            <div key={l}>
-              <div className="font-bold uppercase tracking-tight text-4xl md:text-5xl">{n}</div>
-              <div className="mt-2 text-sm md:text-base text-white/85">{l}</div>
-            </div>
-          ))}
+          <div>
+            <div className="font-bold uppercase tracking-tight text-4xl md:text-5xl">80km of trails</div>
+            <div className="mt-2 text-sm md:text-base" style={{ color: "#EBD299" }}>&amp; growing</div>
+          </div>
+          <div>
+            <div className="font-bold uppercase tracking-tight text-4xl md:text-5xl">9</div>
+            <div className="mt-2 text-sm md:text-base" style={{ color: "#EBD299" }}>trail clusters</div>
+          </div>
+          <div>
+            <div className="font-bold uppercase tracking-tight text-2xl md:text-3xl">Traffic free</div>
+            <div className="mt-2 text-sm md:text-base" style={{ color: "#EBD299" }}>on all trails</div>
+          </div>
+          <div>
+            <div className="font-bold uppercase tracking-tight text-2xl md:text-3xl">Family friendly</div>
+            <div className="mt-2 text-sm md:text-base" style={{ color: "#EBD299" }}>all ages</div>
+          </div>
         </div>
       </section>
 
@@ -104,17 +111,13 @@ function Home() {
           </div>
           <div>
             <h2 className="font-bold uppercase tracking-tight text-brand-purple text-3xl md:text-4xl">
-              The Sacred Mountain
+              The Roof of Inishowen
             </h2>
             <p className="mt-3 font-light uppercase tracking-tight text-brand-purple text-lg">
               Sliabh Sneacht — Inishowen's Highest Peak
             </p>
             <p className="mt-5 text-black/85 leading-relaxed">
-              Long before it had a name on a signpost, pilgrims were walking Sliabh Sneacht.
-              At 615 metres, Inishowen's highest peak carries a holy well at its summit and a
-              pilgrim path worn smooth by centuries of feet. Fully waymarked with a car park,
-              trailhead stone, and bilingual signage — it's ready for you. This August, it
-              becomes the centrepiece of the Donegal Camino.
+              Rising 615 metres above the Inishowen Peninsula, Sliabh Sneacht is the highest peak on the peninsula and a place of pilgrimage for over a thousand years. At its summit sits Tobar na Súl — the Well of the Eyes — a holy well that has drawn pilgrims long before there were signposts to find it. Locals say the snow stays on Sliabh Sneacht until the May Fair of Carn — which is how it got its name: mountain of the snow. Today the mountain is fully waymarked from a car park at the foot, with a bilingual trailhead stone and trail board on the main road. The path to the summit is yours to walk.
             </p>
             <Link
               to="/trails/$slug"
@@ -153,18 +156,24 @@ function Home() {
               <p className="mt-2 text-black/80 text-sm">
                 August &amp; September 2025 · Isle of Doagh → Sliabh Sneacht
               </p>
-              <button className="mt-5 bg-brand-amber text-black font-bold uppercase tracking-tight px-5 py-2.5 rounded-md hover:opacity-90">
+              <Link
+                to="/events"
+                className="mt-5 inline-block bg-brand-amber text-black font-bold uppercase tracking-tight px-5 py-2.5 rounded-md hover:opacity-90"
+              >
                 Join us
-              </button>
+              </Link>
             </div>
             <div className="bg-white rounded-xl p-7">
               <h3 className="font-bold text-brand-purple text-xl">Monthly Community Walk</h3>
               <p className="mt-2 text-black/80 text-sm">
                 Every month · different trail · local food after
               </p>
-              <button className="mt-5 border-2 border-brand-purple text-brand-purple font-bold uppercase tracking-tight px-5 py-2.5 rounded-md hover:bg-brand-purple hover:text-white">
+              <Link
+                to="/events"
+                className="mt-5 inline-block border-2 border-brand-purple text-brand-purple font-bold uppercase tracking-tight px-5 py-2.5 rounded-md hover:bg-brand-purple hover:text-white"
+              >
                 See dates
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -203,28 +212,76 @@ function Home() {
         </div>
       </section>
 
-      {/* INSTAGRAM */}
+      {/* SOCIAL */}
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-5 py-20">
-          <h2 className="text-center font-bold tracking-tight text-brand-purple text-2xl md:text-3xl uppercase">
-            Follow the trail @inishowentrails
-          </h2>
-          <div className="mt-10 grid grid-cols-2 md:grid-cols-3 gap-3">
-            {instaImgs.map((src, i) => (
-              <div key={i} className="aspect-square overflow-hidden rounded-md">
-                <img src={src} alt="" className="w-full h-full object-cover" loading="lazy" />
+          <div className="grid md:grid-cols-2 gap-10">
+            {/* Instagram */}
+            <div>
+              <div className="flex items-center gap-2 text-brand-purple">
+                <Instagram size={22} />
+                <span className="font-bold">@inishowentrails</span>
               </div>
-            ))}
+              <div className="mt-5 grid grid-cols-3 gap-2">
+                {instaImgs.map((src, i) => (
+                  <div key={i} className="aspect-square overflow-hidden rounded-md">
+                    <img src={src} alt="" className="w-full h-full object-cover" loading="lazy" />
+                  </div>
+                ))}
+              </div>
+              <a
+                href="https://instagram.com/inishowentrails"
+                className="mt-5 inline-block font-bold text-brand-purple hover:text-brand-amber"
+              >
+                Follow on Instagram →
+              </a>
+            </div>
+
+            {/* Facebook */}
+            <div>
+              <div className="flex items-center gap-2 text-brand-purple">
+                <Facebook size={22} />
+                <span className="font-bold">Inishowen Trails</span>
+              </div>
+              <div
+                className="mt-5 bg-white"
+                style={{
+                  border: "1px solid #e0e0e0",
+                  borderRadius: 8,
+                  padding: 16,
+                }}
+              >
+                <div className="flex items-center gap-3">
+                  <div className="size-10 rounded-full bg-brand-purple text-white flex items-center justify-center font-bold text-sm">
+                    IT
+                  </div>
+                  <div>
+                    <div className="font-bold text-sm text-black">Inishowen Trails</div>
+                    <div className="text-xs text-black/60">Community · Donegal</div>
+                  </div>
+                </div>
+                <p className="mt-3 text-sm text-black/85">
+                  Join us for our next community walk — all welcome.
+                </p>
+                <div className="mt-3 grid grid-cols-3 gap-2">
+                  {fbThumbs.map((src, i) => (
+                    <div key={i} className="aspect-square overflow-hidden rounded-md">
+                      <img src={src} alt="" className="w-full h-full object-cover" loading="lazy" />
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <a
+                href="https://facebook.com/inishowentrails"
+                className="mt-5 inline-block font-bold text-brand-purple hover:text-brand-amber"
+              >
+                Follow on Facebook →
+              </a>
+            </div>
           </div>
-          <div className="mt-8 flex items-center justify-center gap-2 text-brand-purple">
-            <Instagram size={18} />
-            <a
-              href="https://instagram.com/inishowentrails"
-              className="font-bold hover:text-brand-amber"
-            >
-              @inishowentrails
-            </a>
-          </div>
+          <p className="mt-10 text-center italic" style={{ color: "#947474" }}>
+            The older generation shaped Inishowen. The younger generation is discovering it. Follow us on both.
+          </p>
         </div>
       </section>
     </>
