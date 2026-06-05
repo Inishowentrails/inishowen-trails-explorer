@@ -3,12 +3,12 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const links = [
-  { to: "/trails", label: "Trails" },
-  { to: "/#events", label: "Events" },
-  { to: "/inishowen", label: "Inishowen" },
-  { to: "/about", label: "About" },
-  { to: "/support", label: "Support Us" },
-] as const;
+  { to: "/trails", label: "Trails", hash: undefined },
+  { to: "/", label: "Events", hash: "events" },
+  { to: "/inishowen", label: "Inishowen", hash: undefined },
+  { to: "/about", label: "About", hash: undefined },
+  { to: "/support", label: "Support Us", hash: undefined },
+] as { to: string; label: string; hash?: string }[];
 
 export function Nav() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
