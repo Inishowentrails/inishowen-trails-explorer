@@ -1,6 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import wordmark from "@/assets/inishowen-trails-wordmark.jpeg.asset.json";
+
 
 
 const links = [
@@ -17,15 +19,12 @@ export function Nav() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-brand-purple">
       <div className="mx-auto max-w-7xl px-5 py-4 flex items-center justify-between">
-        <Link
-          to="/"
-          aria-label="inishowen trails"
-          className="text-white lowercase whitespace-nowrap flex items-baseline gap-1 leading-none"
-          style={{ fontFamily: "Ubuntu, sans-serif", fontWeight: 700 }}
-        >
-          <span className="text-2xl md:text-3xl tracking-tight">inish</span>
-          <span className="inline-block size-2 md:size-2.5 rounded-full bg-brand-amber" />
-          <span className="text-2xl md:text-3xl tracking-tight">owen trails</span>
+        <Link to="/" aria-label="inishowen trails" className="flex items-center">
+          <img
+            src={wordmark.url}
+            alt="inishowen trails"
+            style={{ height: 44, width: "auto" }}
+          />
         </Link>
 
         <nav className="hidden md:flex items-center gap-7">
