@@ -57,26 +57,48 @@ function Home() {
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/35" />
-        <div className="relative z-10 text-center px-5 max-w-4xl">
-          <h1 className="text-white font-bold uppercase tracking-tight text-4xl sm:text-6xl md:text-7xl leading-[0.95]">
-            <span className="block">Inishowen,</span>
-            <span className="block">Ireland's best kept secret</span>
+        <div className="relative z-10 text-center px-5 max-w-4xl flex flex-col items-center">
+          <h1 className="text-white uppercase" style={{ lineHeight: 1.05 }}>
+            <span
+              className="block font-bold"
+              style={{
+                fontSize: "clamp(40px, 8vw, 72px)",
+                letterSpacing: "-0.01em",
+                lineHeight: 1.05,
+              }}
+            >
+              INISHOWEN
+            </span>
+            <span
+              className="block"
+              style={{
+                fontWeight: 300,
+                fontSize: "clamp(30px, 6vw, 52px)",
+                letterSpacing: "0.02em",
+                lineHeight: 1.05,
+              }}
+            >
+              Ireland's best kept secret
+            </span>
           </h1>
-          <p className="mt-5 text-white font-light uppercase tracking-tight text-base sm:text-xl md:text-2xl">
+          <div style={{ width: 48, height: 3, background: "#E2B53F", margin: "16px 0" }} />
+          <p
+            className="text-white uppercase"
+            style={{
+              fontWeight: 300,
+              fontSize: 13,
+              letterSpacing: "0.12em",
+              opacity: 0.8,
+            }}
+          >
             80km of walking &amp; cycling trails · Donegal, Ireland
           </p>
-          <div className="mt-9 flex flex-col sm:flex-row gap-3 justify-center">
+          <div className="mt-9 flex justify-center">
             <Link
               to="/trails"
               className="inline-flex items-center justify-center bg-brand-amber text-black font-bold uppercase tracking-tight px-7 py-3.5 rounded-md hover:opacity-90 transition"
             >
               Explore the trails
-            </Link>
-            <Link
-              to="/inishowen"
-              className="inline-flex items-center justify-center border-2 border-white text-white font-bold uppercase tracking-tight px-7 py-3.5 rounded-md hover:bg-white hover:text-black transition"
-            >
-              Plan your visit
             </Link>
           </div>
         </div>
