@@ -141,64 +141,61 @@ function EventsPage() {
           <div className="mt-10 grid md:grid-cols-2 gap-6">
             {[
               {
-                tag: "Upcoming",
                 title: "Inishowen Sponsored Walk",
                 date: "Date TBC",
-                description: "A community sponsored walk raising funds for Inishowen Trails. Details to follow.",
                 cta: "Register interest",
               },
               {
-                tag: "Upcoming",
                 title: "Inishowen Trails Quiz Night",
                 date: "Date TBC",
-                description: "A social fundraising quiz night for the trails community. Details to follow.",
                 cta: "Register interest",
               },
               {
-                tag: "Coming soon",
                 title: "Inishowen Ultra Marathon",
                 date: "Coming soon",
-                description: "An endurance event across the Inishowen peninsula. More details soon.",
                 cta: "Notify me",
-              },
-              {
-                tag: "Annual event",
-                title: "Annual Sliabh Sneacht Charity Climb",
-                date: "7th August 2026 · in conjunction with Clonmany Festival",
-                description: "Our annual charity climb of Sliabh Sneacht — the Roof of Inishowen — held each year as part of the Clonmany Festival. A community climb to the summit at 615 metres, with the holy well Tobar na Súl at the top. All fitness levels welcome. Details and registration to follow.",
-                cta: "Register interest",
               },
             ].map((e) => (
               <div
                 key={e.title}
                 className="bg-brand-cloud rounded-xl p-7 flex flex-col"
               >
-                <span
-                  className="self-start bg-brand-purple text-white uppercase tracking-widest rounded-full px-3 py-1"
-                  style={{ fontSize: 11, fontWeight: 700 }}
-                >
-                  {e.tag}
-                </span>
-                <h3
-                  className="mt-3 text-brand-purple"
-                  style={{ fontWeight: 700, fontSize: 18 }}
-                >
-                  {e.title}
-                </h3>
-                <p style={{ color: "#947474", fontSize: 13 }} className="mt-1">
-                  {e.date}
-                </p>
-                <p className="mt-3" style={{ color: "#000", fontSize: 13 }}>
-                  {e.description}
-                </p>
+                <h3 className="font-bold text-brand-purple text-xl">{e.title}</h3>
+                <p className="mt-2 text-black/70 text-sm">{e.date}</p>
                 <a
                   href="mailto:inishowentrails@gmail.com"
-                  className="mt-6 inline-flex items-center justify-center bg-white border-2 border-brand-purple text-brand-purple font-bold uppercase tracking-tight px-5 py-2.5 rounded-md hover:bg-brand-purple hover:text-white self-start"
+                  className="mt-6 inline-flex items-center justify-center bg-brand-amber text-black font-bold uppercase tracking-tight px-5 py-2.5 rounded-md hover:opacity-90 self-start"
                 >
                   {e.cta}
                 </a>
               </div>
             ))}
+            <div className="bg-brand-cloud rounded-xl p-7 flex flex-col">
+              <span
+                className="self-start bg-brand-purple text-white uppercase tracking-widest rounded-full px-3 py-1"
+                style={{ fontSize: 11, fontWeight: 700 }}
+              >
+                Annual event
+              </span>
+              <h3
+                className="mt-3 text-brand-purple"
+                style={{ fontWeight: 700, fontSize: 18 }}
+              >
+                Annual Sliabh Sneacht Charity Climb
+              </h3>
+              <p style={{ color: "#947474", fontSize: 13 }} className="mt-1">
+                7th August 2026 · in conjunction with Clonmany Festival
+              </p>
+              <p className="mt-3" style={{ color: "#000", fontSize: 13 }}>
+                Our annual charity climb of Sliabh Sneacht — the Roof of Inishowen — held each year as part of the Clonmany Festival. A community climb to the summit at 615 metres, with the holy well Tobar na Súl at the top. All fitness levels welcome. Details and registration to follow.
+              </p>
+              <a
+                href="mailto:inishowentrails@gmail.com"
+                className="mt-6 inline-flex items-center justify-center bg-white border-2 border-brand-purple text-brand-purple font-bold uppercase tracking-tight px-5 py-2.5 rounded-md hover:bg-brand-purple hover:text-white self-start"
+              >
+                Register interest
+              </a>
+            </div>
           </div>
         </div>
       </section>
