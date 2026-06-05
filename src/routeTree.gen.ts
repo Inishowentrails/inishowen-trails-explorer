@@ -10,12 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TrailsRouteImport } from './routes/trails'
+import { Route as InishowenRouteImport } from './routes/inishowen'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as TrailsSlugRouteImport } from './routes/trails.$slug'
 
 const TrailsRoute = TrailsRouteImport.update({
   id: '/trails',
   path: '/trails',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InishowenRoute = InishowenRouteImport.update({
+  id: '/inishowen',
+  path: '/inishowen',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -31,30 +37,34 @@ const TrailsSlugRoute = TrailsSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/inishowen': typeof InishowenRoute
   '/trails': typeof TrailsRouteWithChildren
   '/trails/$slug': typeof TrailsSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/inishowen': typeof InishowenRoute
   '/trails': typeof TrailsRouteWithChildren
   '/trails/$slug': typeof TrailsSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/inishowen': typeof InishowenRoute
   '/trails': typeof TrailsRouteWithChildren
   '/trails/$slug': typeof TrailsSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/trails' | '/trails/$slug'
+  fullPaths: '/' | '/inishowen' | '/trails' | '/trails/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/trails' | '/trails/$slug'
-  id: '__root__' | '/' | '/trails' | '/trails/$slug'
+  to: '/' | '/inishowen' | '/trails' | '/trails/$slug'
+  id: '__root__' | '/' | '/inishowen' | '/trails' | '/trails/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  InishowenRoute: typeof InishowenRoute
   TrailsRoute: typeof TrailsRouteWithChildren
 }
 
@@ -65,6 +75,13 @@ declare module '@tanstack/react-router' {
       path: '/trails'
       fullPath: '/trails'
       preLoaderRoute: typeof TrailsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/inishowen': {
+      id: '/inishowen'
+      path: '/inishowen'
+      fullPath: '/inishowen'
+      preLoaderRoute: typeof InishowenRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -97,8 +114,19 @@ const TrailsRouteWithChildren =
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  InishowenRoute: InishowenRoute,
   TrailsRoute: TrailsRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
