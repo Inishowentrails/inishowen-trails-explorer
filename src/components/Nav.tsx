@@ -70,8 +70,9 @@ export function Nav() {
           <div className="flex flex-col p-5 gap-4">
             {links.map((l) => (
               <Link
-                key={l.to}
+                key={l.label}
                 to={l.to}
+                hash={l.hash}
                 onClick={() => setOpen(false)}
                 className="text-white text-base font-normal py-2"
               >
