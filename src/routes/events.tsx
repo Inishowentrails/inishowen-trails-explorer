@@ -1,0 +1,168 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { PageHero } from "@/components/PageHero";
+
+export const Route = createFileRoute("/events")({
+  head: () => ({
+    meta: [
+      { title: "Events & Community — Inishowen Trails" },
+      {
+        name: "description",
+        content:
+          "From monthly community walks to the Donegal Camino — there's always something on in Inishowen.",
+      },
+      { property: "og:title", content: "Events & Community — Inishowen Trails" },
+      {
+        property: "og:description",
+        content:
+          "From monthly community walks to the Donegal Camino — there's always something on in Inishowen.",
+      },
+    ],
+  }),
+  component: EventsPage,
+});
+
+const months = [
+  "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+];
+
+function EventsPage() {
+  return (
+    <>
+      <PageHero
+        title="events & community"
+        subtitle="From monthly community walks to the Donegal Camino — there's always something on in Inishowen."
+      />
+
+      {/* FEATURED — DONEGAL CAMINO */}
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-5 py-20">
+          <div className="bg-brand-cloud rounded-2xl overflow-hidden grid md:grid-cols-2">
+            <div className="aspect-[4/3] md:aspect-auto">
+              <img
+                src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1400&q=80"
+                alt="Donegal Camino"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="p-8 md:p-12">
+              <div className="text-xs font-bold uppercase tracking-widest text-brand-amber">
+                Featured · Partner event
+              </div>
+              <h2 className="mt-2 font-bold uppercase tracking-tight text-brand-purple text-3xl md:text-4xl">
+                Donegal Camino 2026
+              </h2>
+              <p className="mt-3 font-light uppercase tracking-tight text-brand-purple">
+                30 August – 5 September 2026
+              </p>
+              <p className="mt-5 text-black/85 leading-relaxed">
+                A week-long walking pilgrimage across Donegal in partnership with Cancer Care West.
+                Inishowen Trails hosts Day 1 across the Isle of Doagh and Day 2 over Sliabh Sneacht.
+                Limited to 100 walkers per day.
+              </p>
+              <div className="mt-7 flex flex-col sm:flex-row gap-3">
+                <a
+                  href="https://www.donegalcamino.ie/registration/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center bg-brand-amber text-black font-bold uppercase tracking-tight px-6 py-3 rounded-md hover:opacity-90"
+                >
+                  Register now
+                </a>
+                <a
+                  href="https://www.donegalcamino.ie/itinerary/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center border-2 border-brand-purple text-brand-purple font-bold uppercase tracking-tight px-6 py-3 rounded-md hover:bg-brand-purple hover:text-white"
+                >
+                  View full itinerary
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* MONTHLY */}
+      <section className="bg-brand-cloud">
+        <div className="mx-auto max-w-7xl px-5 py-20">
+          <h2 className="font-bold uppercase tracking-tight text-brand-purple text-3xl md:text-4xl">
+            Monthly events
+          </h2>
+
+          <div className="mt-8 bg-white rounded-2xl p-8 md:p-10">
+            <div className="text-xs font-bold uppercase tracking-widest text-brand-amber">
+              Monthly collab
+            </div>
+            <h3 className="mt-2 font-bold text-brand-purple text-2xl">
+              Solo Mates × Inishowen Trails
+            </h3>
+            <p className="mt-3 text-black/85 leading-relaxed max-w-2xl">
+              A monthly meet-up combining a trail walk, a hands-on activity, and food together after.
+              Open to all — come on your own, leave with friends.
+            </p>
+          </div>
+
+          <h3 className="mt-12 font-bold uppercase tracking-tight text-brand-purple text-xl">
+            2026 calendar
+          </h3>
+          <div className="mt-5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+            {months.map((m) => (
+              <div
+                key={m}
+                className="bg-white rounded-lg p-4 border border-black/5"
+              >
+                <div className="font-bold text-brand-purple uppercase tracking-tight">
+                  {m} 2026
+                </div>
+                <div className="mt-1 text-xs text-black/70">Monthly walk · TBC</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* OTHER EVENTS */}
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-5 py-20">
+          <h2 className="font-bold uppercase tracking-tight text-brand-purple text-3xl md:text-4xl">
+            More events
+          </h2>
+          <div className="mt-10 grid md:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Inishowen Sponsored Walk",
+                date: "Date TBC",
+                cta: "Register interest",
+              },
+              {
+                title: "Inishowen Trails Quiz Night",
+                date: "Date TBC",
+                cta: "Register interest",
+              },
+              {
+                title: "Inishowen Ultra Marathon",
+                date: "Coming soon",
+                cta: "Notify me",
+              },
+            ].map((e) => (
+              <div
+                key={e.title}
+                className="bg-brand-cloud rounded-xl p-7 flex flex-col"
+              >
+                <h3 className="font-bold text-brand-purple text-xl">{e.title}</h3>
+                <p className="mt-2 text-black/70 text-sm">{e.date}</p>
+                <a
+                  href="mailto:inishowentrails@gmail.com"
+                  className="mt-6 inline-flex items-center justify-center bg-brand-amber text-black font-bold uppercase tracking-tight px-5 py-2.5 rounded-md hover:opacity-90 self-start"
+                >
+                  {e.cta}
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
