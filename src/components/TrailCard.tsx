@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import Link from "next/link";
 import type { Trail } from "@/data/trails";
 
 const diffStyle: Record<Trail["difficulty"], string> = {
@@ -21,14 +21,14 @@ export function TrailCard({ trail }: { trail: Trail }) {
         {trail.irishName && (
           <p className="text-xs text-brand-muted-purple italic">{trail.irishName}</p>
         )}
-        <h3 className="font-bold text-brand-purple text-lg leading-tight">
-          {trail.englishName}
-        </h3>
+        <h3 className="font-bold text-brand-purple text-lg leading-tight">{trail.englishName}</h3>
         <div className="flex flex-wrap gap-2">
           <span className="text-xs font-bold uppercase tracking-tight px-2.5 py-1 rounded-full bg-brand-amber text-black">
             {trail.distance}
           </span>
-          <span className={`text-xs font-bold uppercase tracking-tight px-2.5 py-1 rounded-full ${diffStyle[trail.difficulty]}`}>
+          <span
+            className={`text-xs font-bold uppercase tracking-tight px-2.5 py-1 rounded-full ${diffStyle[trail.difficulty]}`}
+          >
             {trail.difficulty}
           </span>
         </div>
@@ -38,8 +38,7 @@ export function TrailCard({ trail }: { trail: Trail }) {
         <p className="text-sm text-black/80 line-clamp-3">{trail.description}</p>
         <div className="mt-auto pt-2">
           <Link
-            to="/trails/$slug"
-            params={{ slug: trail.slug }}
+            href={`/trails/${trail.slug}`}
             className="inline-flex items-center gap-1 text-sm font-bold text-brand-purple hover:text-brand-amber"
           >
             View trail →

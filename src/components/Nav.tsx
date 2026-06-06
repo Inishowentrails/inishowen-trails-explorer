@@ -19,11 +19,7 @@ export function Nav() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-brand-purple">
       <div className="mx-auto max-w-7xl px-5 py-4 flex items-center justify-between">
         <Link href="/" aria-label="inishowen trails" className="flex items-center">
-          <img
-            src="/logo.jpeg"
-            alt="inishowen trails"
-            style={{ height: 64, width: "auto" }}
-          />
+          <img src="/logo.jpeg" alt="inishowen trails" style={{ height: 64, width: "auto" }} />
         </Link>
 
         <nav className="hidden md:flex items-center gap-7">

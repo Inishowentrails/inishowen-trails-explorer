@@ -35,11 +35,31 @@ export function Footer() {
         <div>
           <h4 className="font-bold uppercase tracking-tight text-sm mb-4">Quick links</h4>
           <ul className="space-y-2 text-sm text-white/85">
-            <li><Link href="/trails" className="hover:text-brand-amber">Trails</Link></li>
-            <li><Link href="/#events" className="hover:text-brand-amber">Events</Link></li>
-            <li><Link href="/inishowen" className="hover:text-brand-amber">Inishowen</Link></li>
-            <li><Link href="/about" className="hover:text-brand-amber">About</Link></li>
-            <li><Link href="/support" className="hover:text-brand-amber">Support Us</Link></li>
+            <li>
+              <Link href="/trails" className="hover:text-brand-amber">
+                Trails
+              </Link>
+            </li>
+            <li>
+              <Link href="/#events" className="hover:text-brand-amber">
+                Events
+              </Link>
+            </li>
+            <li>
+              <Link href="/inishowen" className="hover:text-brand-amber">
+                Inishowen
+              </Link>
+            </li>
+            <li>
+              <Link href="/about" className="hover:text-brand-amber">
+                About
+              </Link>
+            </li>
+            <li>
+              <Link href="/support" className="hover:text-brand-amber">
+                Support Us
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -48,9 +68,7 @@ export function Footer() {
             <div className="size-10 rounded-full bg-white flex items-center justify-center">
               <span className="text-brand-purple font-bold text-sm lowercase">nw</span>
             </div>
-            <span className="text-sm font-normal lowercase">
-              north west community development
-            </span>
+            <span className="text-sm font-normal lowercase">north west community development</span>
           </div>
           <p className="text-xs text-white/75 mb-1">Charity No: 20206770</p>
           <p className="text-xs text-white/75">

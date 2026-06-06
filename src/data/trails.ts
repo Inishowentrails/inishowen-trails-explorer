@@ -115,11 +115,7 @@ export const trails: Trail[] = [
     shape: "loop",
     description:
       "Exceptional views over Lough Foyle. Passes through the ancient native woodland of Lisnagra, home to both Red and Grey Squirrels. Connects with the Derry–Quigley's Point Greenway. Waymarked anticlockwise only.",
-    pointsOfInterest: [
-      "Ruined homestead",
-      "Ancient standing stone",
-      "Muff Liquor Company",
-    ],
+    pointsOfInterest: ["Ruined homestead", "Ancient standing stone", "Muff Liquor Company"],
     image: img("granias-gap"),
   },
   {
@@ -152,5 +148,4 @@ export const trails: Trail[] = [
   },
 ];
 
-export const getTrailBySlug = (slug: string) =>
-  trails.find((t) => t.slug === slug);
+export const getTrailBySlug = (slug: string) => trails.find((t) => t.slug === slug);
