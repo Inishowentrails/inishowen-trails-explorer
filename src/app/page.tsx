@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Instagram, Facebook } from "lucide-react";
-import { trails } from "@/data/trails";
+import { trailClusters } from "@/data/trails";
 import { TrailCard } from "@/components/TrailCard";
 
 export const metadata: Metadata = {
@@ -45,11 +45,7 @@ const instaImgs = [
 const fbThumbs = instaImgs.slice(0, 3);
 
 export default function Home() {
-  const featured = [
-    trails.find((t) => t.slug === "old-carn-road-drovers-trail")!,
-    trails.find((t) => t.slug === "granias-gap-trail")!,
-    trails.find((t) => t.slug === "tip-oneill-trail")!,
-  ];
+  const featured = trailClusters;
 
   return (
     <>
@@ -120,7 +116,7 @@ export default function Home() {
             </div>
           </div>
           <div>
-            <div className="font-bold uppercase tracking-tight text-4xl md:text-5xl">9</div>
+            <div className="font-bold uppercase tracking-tight text-4xl md:text-5xl">3</div>
             <div className="mt-2 text-sm md:text-base" style={{ color: "#EBD299" }}>
               trail clusters
             </div>
@@ -167,7 +163,7 @@ export default function Home() {
               stone and trail board on the main road. The path to the summit is yours to walk.
             </p>
             <Link
-              href="/trails/old-carn-road-drovers-trail"
+              href="/trails/sliabh-sneacht"
               className="mt-7 inline-flex items-center bg-brand-amber text-black font-bold uppercase tracking-tight px-6 py-3 rounded-md hover:opacity-90"
             >
               Walk Sliabh Sneacht
@@ -184,7 +180,7 @@ export default function Home() {
           </h2>
           <div className="mt-12 grid md:grid-cols-3 gap-6">
             {featured.map((t) => (
-              <TrailCard key={t.slug} trail={t} />
+              <TrailCard key={t.slug} cluster={t} />
             ))}
           </div>
         </div>

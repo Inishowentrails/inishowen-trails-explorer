@@ -5,7 +5,7 @@ import { TrailsExplorer } from "./TrailsExplorer";
 export const metadata: Metadata = {
   title: "Trails — Inishowen Trails",
   description:
-    "Explore 9 trail clusters across the Inishowen peninsula — 80km of traffic-free walking and cycling.",
+    "Explore 3 trail clusters and 10 waymarked routes across the Inishowen peninsula — 80km of traffic-free walking and cycling.",
 };
 
 const MAP_SRC = "https://www.google.com/maps/d/embed?mid=14GGFzn3vQMFy3Rr-RRfE7EeGEMI5EEg";
@@ -13,7 +13,7 @@ const MAP_SRC = "https://www.google.com/maps/d/embed?mid=14GGFzn3vQMFy3Rr-RRfE7E
 export default function TrailsPage() {
   return (
     <>
-      <PageHero title="Explore the Trails" subtitle="9 trail clusters · 80km · 100% off-road" />
+      <PageHero title="Explore the Trails" subtitle="3 clusters · 10 routes · 80km · 100% off-road" />
 
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-5 py-12">

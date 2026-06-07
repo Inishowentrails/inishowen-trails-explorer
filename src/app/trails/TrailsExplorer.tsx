@@ -2,18 +2,19 @@
 
 import { useMemo, useState } from "react";
 import { TrailCard } from "@/components/TrailCard";
-import { trails, type Difficulty } from "@/data/trails";
+import { trailClusters } from "@/data/trails";
 
-type Filter = "All" | Difficulty;
+type Filter = "All" | "Easy" | "Moderate";
 
 const filters: Filter[] = ["All", "Easy", "Moderate"];
 
 export function TrailsExplorer() {
   const [filter, setFilter] = useState<Filter>("All");
-  const filtered = useMemo(
-    () => (filter === "All" ? trails : trails.filter((t) => t.difficulty === filter)),
-    [filter],
-  );
+  const filtered = useMemo(() => {
+    if (filter === "All") return trailClusters;
+    // Mixed clusters contain both Easy and Moderate routes, so they show under both filters.
+    return trailClusters.filter((c) => c.difficulty === filter || c.difficulty === "Mixed");
+  }, [filter]);
 
   return (
     <>
@@ -37,8 +38,8 @@ export function TrailsExplorer() {
       </div>
 
       <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filtered.map((t) => (
-          <TrailCard key={t.slug} trail={t} />
+        {filtered.map((c) => (
+          <TrailCard key={c.slug} cluster={c} />
         ))}
       </div>
     </>
