@@ -35,3 +35,9 @@ dist-ssr
 .next/
 /out/
 next-env.d.ts
+
+# Claude Code local settings (personal, not shared)
+.claude/settings.local.json
+
+# Internal project doc — kept local, not for the public repo
+inishowen_trails.md
