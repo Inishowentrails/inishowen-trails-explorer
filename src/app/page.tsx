@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Instagram, Facebook } from "lucide-react";
+import { Facebook } from "lucide-react";
 import { trailClusters } from "@/data/trails";
 import { TrailCard } from "@/components/TrailCard";
+import InstagramGrid from "@/components/InstagramGrid";
 
 export const metadata: Metadata = {
   title: "Inishowen Trails — Ireland's best-kept secret",
@@ -254,72 +255,51 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SOCIAL */}
-      <section className="bg-white">
+      {/* SOCIAL — Instagram */}
+      <InstagramGrid />
+
+      {/* SOCIAL — Facebook */}
+      <section className="bg-brand-cloud">
         <div className="mx-auto max-w-7xl px-5 py-20">
-          <div className="grid md:grid-cols-2 gap-10">
-            {/* Instagram */}
-            <div>
-              <div className="flex items-center gap-2 text-brand-purple">
-                <Instagram size={22} />
-                <span className="font-bold">@inishowentrails</span>
+          <div className="max-w-xl mx-auto">
+            <div className="flex items-center gap-2 text-brand-purple">
+              <Facebook size={22} />
+              <span className="font-bold">Inishowen Trails</span>
+            </div>
+            <div
+              className="mt-5 bg-white"
+              style={{
+                border: "1px solid #e0e0e0",
+                borderRadius: 8,
+                padding: 16,
+              }}
+            >
+              <div className="flex items-center gap-3">
+                <div className="size-10 rounded-full bg-brand-purple text-white flex items-center justify-center font-bold text-sm">
+                  IT
+                </div>
+                <div>
+                  <div className="font-bold text-sm text-black">Inishowen Trails</div>
+                  <div className="text-xs text-black/60">Community · Donegal</div>
+                </div>
               </div>
-              <div className="mt-5 grid grid-cols-3 gap-2">
-                {instaImgs.map((src, i) => (
+              <p className="mt-3 text-sm text-black/85">
+                Join us for our next community walk — all welcome.
+              </p>
+              <div className="mt-3 grid grid-cols-3 gap-2">
+                {fbThumbs.map((src, i) => (
                   <div key={i} className="aspect-square overflow-hidden rounded-md">
                     <img src={src} alt="" className="w-full h-full object-cover" loading="lazy" />
                   </div>
                 ))}
               </div>
-              <a
-                href="https://instagram.com/inishowentrails"
-                className="mt-5 inline-block font-bold text-brand-purple hover:text-brand-amber"
-              >
-                Follow on Instagram →
-              </a>
             </div>
-
-            {/* Facebook */}
-            <div>
-              <div className="flex items-center gap-2 text-brand-purple">
-                <Facebook size={22} />
-                <span className="font-bold">Inishowen Trails</span>
-              </div>
-              <div
-                className="mt-5 bg-white"
-                style={{
-                  border: "1px solid #e0e0e0",
-                  borderRadius: 8,
-                  padding: 16,
-                }}
-              >
-                <div className="flex items-center gap-3">
-                  <div className="size-10 rounded-full bg-brand-purple text-white flex items-center justify-center font-bold text-sm">
-                    IT
-                  </div>
-                  <div>
-                    <div className="font-bold text-sm text-black">Inishowen Trails</div>
-                    <div className="text-xs text-black/60">Community · Donegal</div>
-                  </div>
-                </div>
-                <p className="mt-3 text-sm text-black/85">
-                  Join us for our next community walk — all welcome.
-                </p>
-                <div className="mt-3 grid grid-cols-3 gap-2">
-                  {fbThumbs.map((src, i) => (
-                    <div key={i} className="aspect-square overflow-hidden rounded-md">
-                      <img src={src} alt="" className="w-full h-full object-cover" loading="lazy" />
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <a
-                href="https://facebook.com/inishowentrails"
-                className="mt-5 inline-block font-bold text-brand-purple hover:text-brand-amber"
-              >
-                Follow on Facebook →
-              </a>
-            </div>
+            <a
+              href="https://facebook.com/inishowentrails"
+              className="mt-5 inline-block font-bold text-brand-purple hover:text-brand-amber"
+            >
+              Follow on Facebook →
+            </a>
           </div>
           <p className="mt-10 text-center italic" style={{ color: "#947474" }}>
             The older generation shaped Inishowen. The younger generation is discovering it. Follow
