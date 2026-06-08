@@ -295,7 +295,9 @@ export default function Home() {
               </div>
             </div>
             <a
-              href="https://facebook.com/inishowentrails"
+              href="https://www.facebook.com/NWCD2"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-5 inline-block font-bold text-brand-purple hover:text-brand-amber"
             >
               Follow on Facebook →
