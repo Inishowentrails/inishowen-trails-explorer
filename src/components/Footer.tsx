@@ -17,6 +17,8 @@ export function Footer() {
           <div className="flex gap-3 mt-5">
             <a
               href="https://instagram.com/inishowentrails"
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="Instagram"
               className="size-9 rounded-full border border-white/30 flex items-center justify-center hover:bg-brand-amber hover:border-brand-amber hover:text-black transition-colors"
             >
