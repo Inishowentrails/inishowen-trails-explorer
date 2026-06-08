@@ -23,7 +23,9 @@ export function Footer() {
               <Instagram size={16} />
             </a>
             <a
-              href="https://facebook.com/inishowentrails"
+              href="https://www.facebook.com/NWCD2"
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="Facebook"
               className="size-9 rounded-full border border-white/30 flex items-center justify-center hover:bg-brand-amber hover:border-brand-amber hover:text-black transition-colors"
             >
