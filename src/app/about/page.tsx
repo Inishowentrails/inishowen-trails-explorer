@@ -49,7 +49,7 @@ export default function AboutPage() {
           Right now our trails exist in clusters across Inishowen. The long-term vision — the one
           that drives everything we do — is a Donegal Camino: a single connected route linking every
           trail cluster from Muff in the south to Malin Head in the north. The Donegal Camino is
-          already beginning. In August and September 2025, Isle of Doagh and Sliabh Sneacht form
+          already beginning. In August and September 2026, Isle of Doagh and Sliabh Sneacht form
           days one and two of the journey.
         </p>
       </Section>

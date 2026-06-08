@@ -185,7 +185,7 @@ export default function Home() {
             <div className="bg-white rounded-xl p-7">
               <h3 className="font-bold text-brand-purple text-xl">Donegal Camino</h3>
               <p className="mt-2 text-black/80 text-sm">
-                August &amp; September 2025 · Isle of Doagh → Sliabh Sneacht
+                August &amp; September 2026 · Isle of Doagh → Sliabh Sneacht
               </p>
               <Link
                 href="/events"

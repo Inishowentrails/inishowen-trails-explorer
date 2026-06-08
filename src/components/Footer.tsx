@@ -113,7 +113,7 @@ export function Footer() {
       </div>
       <div className="border-t border-white/10">
         <div className="mx-auto max-w-7xl px-5 py-5 text-xs text-white/65 text-center">
-          © 2025 Inishowen Trails / North West Community Development. All rights reserved.
+          © 2026 Inishowen Trails / North West Community Development. All rights reserved.
         </div>
       </div>
     </footer>
