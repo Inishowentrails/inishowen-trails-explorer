@@ -84,14 +84,24 @@ export default function SupportPage() {
             </li>
             <li className="flex items-center gap-3">
               <Instagram size={18} className="text-brand-amber" />
-              <a href="https://instagram.com/inishowentrails" className="hover:text-brand-amber">
+              <a
+                href="https://instagram.com/inishowentrails"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-brand-amber"
+              >
                 @inishowentrails
               </a>
             </li>
             <li className="flex items-center gap-3">
               <Facebook size={18} className="text-brand-amber" />
-              <a href="https://facebook.com/inishowentrails" className="hover:text-brand-amber">
-                /inishowentrails
+              <a
+                href="https://www.facebook.com/NWCD2"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-brand-amber"
+              >
+                /NWCD2
               </a>
             </li>
             <li className="text-white/75 text-sm pt-2">Charity No: 20206770</li>
