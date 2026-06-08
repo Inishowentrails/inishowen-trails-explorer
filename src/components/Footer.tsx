@@ -4,7 +4,7 @@ import { Instagram, Facebook } from "lucide-react";
 export function Footer() {
   return (
     <footer className="bg-brand-purple text-white">
-      <div className="mx-auto max-w-7xl px-5 py-14 grid gap-10 md:grid-cols-3">
+      <div className="mx-auto max-w-7xl px-5 py-14 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
         <div>
           <img
             src="/logo.jpeg"
@@ -62,6 +62,37 @@ export function Footer() {
             <li>
               <Link href="/support" className="hover:text-brand-amber">
                 Support Us
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="font-bold uppercase tracking-tight text-sm mb-4">Legal</h4>
+          <ul className="space-y-2 text-sm text-white/85">
+            <li>
+              <Link href="/privacy-policy" className="hover:text-brand-amber">
+                Privacy Policy
+              </Link>
+            </li>
+            <li>
+              <Link href="/cookie-policy" className="hover:text-brand-amber">
+                Cookie Policy
+              </Link>
+            </li>
+            <li>
+              <Link href="/terms" className="hover:text-brand-amber">
+                Terms & Conditions
+              </Link>
+            </li>
+            <li>
+              <Link href="/disclaimer" className="hover:text-brand-amber">
+                Trail Safety Disclaimer
+              </Link>
+            </li>
+            <li>
+              <Link href="/accessibility" className="hover:text-brand-amber">
+                Accessibility
               </Link>
             </li>
           </ul>

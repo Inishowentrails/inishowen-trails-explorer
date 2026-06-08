@@ -1,9 +1,10 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 
 export function VolunteerForm() {
-  const [form, setForm] = useState({ name: "", email: "", interest: "" });
+  const [form, setForm] = useState({ name: "", email: "", interest: "", consent: false });
   const [sent, setSent] = useState(false);
 
   if (sent) {
@@ -39,6 +40,25 @@ export function VolunteerForm() {
         onChange={(e) => setForm({ ...form, interest: e.target.value })}
         className="px-3 py-2 rounded-md border border-black/15 bg-white text-sm"
       />
+      <label className="flex items-start gap-2 text-sm text-black/75">
+        <input
+          type="checkbox"
+          required
+          checked={form.consent}
+          onChange={(e) => setForm({ ...form, consent: e.target.checked })}
+          className="mt-1 shrink-0"
+        />
+        <span>
+          I agree to be contacted about my enquiry and have read the{" "}
+          <Link
+            href="/privacy-policy"
+            className="text-brand-purple font-bold underline hover:text-brand-amber"
+          >
+            Privacy Policy
+          </Link>
+          .
+        </span>
+      </label>
       <button
         type="submit"
         className="inline-flex items-center justify-center bg-brand-purple text-white font-bold uppercase tracking-tight px-5 py-3 rounded-md hover:opacity-90"

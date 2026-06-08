@@ -69,3 +69,103 @@
     font-weight: 400;
   }
 }
+
+/* Legal / policy page prose (privacy, cookies, terms, disclaimer, accessibility) */
+.legal-prose {
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+.legal-prose h2 {
+  color: #504087;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.25;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+.legal-prose h3 {
+  color: #504087;
+  font-weight: 700;
+  font-size: 1.125rem;
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+.legal-prose p {
+  margin-bottom: 1rem;
+}
+.legal-prose ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+.legal-prose li {
+  margin-bottom: 0.4rem;
+}
+.legal-prose strong {
+  font-weight: 700;
+  color: #000;
+}
+.legal-prose em {
+  font-style: italic;
+  color: #555;
+}
+.legal-prose a {
+  color: #504087;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s ease;
+}
+.legal-prose a:hover {
+  color: #e2b53f;
+}
+.legal-prose code {
+  background: #f3f3f3;
+  border-radius: 4px;
+  padding: 0.1rem 0.35rem;
+  font-size: 0.85em;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+.legal-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.25rem 0;
+  font-size: 0.9rem;
+}
+.legal-prose th {
+  background: #504087;
+  color: #fff;
+  text-align: left;
+  font-weight: 700;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #d9d9e0;
+}
+.legal-prose td {
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #e6e6e6;
+  vertical-align: top;
+}
+
+/* Top metadata block (Last updated / Organisation / etc.) */
+.legal-meta {
+  margin-bottom: 2rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: #555;
+}
+
+/* Amber review note — "NOTE FOR KEVIN & CATHERINE" */
+.legal-note {
+  background: #ebd299;
+  border: 1px solid #e2b53f;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  color: #000;
+}
+.legal-note p {
+  margin: 0;
+}
