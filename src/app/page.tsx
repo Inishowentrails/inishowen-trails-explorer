@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Facebook } from "lucide-react";
 import { trailClusters } from "@/data/trails";
 import { TrailCard } from "@/components/TrailCard";
 import InstagramGrid from "@/components/InstagramGrid";
@@ -33,17 +32,6 @@ const beyondTiles = [
     img: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=900&q=80",
   },
 ];
-
-const instaImgs = [
-  "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=600&q=80",
-  "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&q=80",
-  "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=600&q=80",
-  "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=600&q=80",
-  "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=600&q=80",
-  "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=600&q=80",
-];
-
-const fbThumbs = instaImgs.slice(0, 3);
 
 export default function Home() {
   const featured = trailClusters;
@@ -259,49 +247,28 @@ export default function Home() {
       <InstagramGrid />
 
       {/* SOCIAL — Facebook */}
-      <section className="bg-brand-cloud">
-        <div className="mx-auto max-w-7xl px-5 py-20">
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-5 pb-20">
           <div className="max-w-xl mx-auto">
-            <div className="flex items-center gap-2 text-brand-purple">
-              <Facebook size={22} />
-              <span className="font-bold">Inishowen Trails</span>
-            </div>
-            <div
-              className="mt-5 bg-white"
-              style={{
-                border: "1px solid #e0e0e0",
-                borderRadius: 8,
-                padding: 16,
-              }}
-            >
-              <div className="flex items-center gap-3">
-                <div className="size-10 rounded-full bg-brand-purple text-white flex items-center justify-center font-bold text-sm">
-                  IT
+            {/* Facebook strip */}
+            <div className="mt-2">
+              <a
+                href="https://www.facebook.com/NWCD2"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 bg-[#F3F3F3] rounded-lg px-5 py-4 hover:bg-[#EBD299] transition-colors duration-200 group"
+              >
+                {/* Facebook icon */}
+                <div className="w-9 h-9 rounded-full bg-[#504087] flex items-center justify-center flex-shrink-0">
+                  <span className="text-white font-bold text-base leading-none">f</span>
                 </div>
+                {/* Text */}
                 <div>
-                  <div className="font-bold text-sm text-black">Inishowen Trails</div>
-                  <div className="text-xs text-black/60">Community · Donegal</div>
+                  <p className="font-bold text-[#504087] text-sm leading-tight">Join our community on Facebook</p>
+                  <p className="text-[#504087] text-sm">Inishowen Trails →</p>
                 </div>
-              </div>
-              <p className="mt-3 text-sm text-black/85">
-                Join us for our next community walk — all welcome.
-              </p>
-              <div className="mt-3 grid grid-cols-3 gap-2">
-                {fbThumbs.map((src, i) => (
-                  <div key={i} className="aspect-square overflow-hidden rounded-md">
-                    <img src={src} alt="" className="w-full h-full object-cover" loading="lazy" />
-                  </div>
-                ))}
-              </div>
+              </a>
             </div>
-            <a
-              href="https://www.facebook.com/NWCD2"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-5 inline-block font-bold text-brand-purple hover:text-brand-amber"
-            >
-              Follow on Facebook →
-            </a>
           </div>
           <p className="mt-10 text-center italic" style={{ color: "#947474" }}>
             The older generation shaped Inishowen. The younger generation is discovering it. Follow
